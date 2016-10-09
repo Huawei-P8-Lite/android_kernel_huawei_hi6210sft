@@ -333,10 +333,7 @@ CONFIG_ZSMALLOC=y
 # CONFIG_PGTABLE_MAPPING is not set
 # CONFIG_ZSMALLOC_STAT is not set
 CONFIG_FORCE_MAX_ZONEORDER=11
-<<<<<<< HEAD
-=======
 CONFIG_SECCOMP=y
->>>>>>> 310535859... update defconfig
 
 #
 # Boot options
@@ -3535,4 +3532,8 @@ CONFIG_SRECORDER_RESERVED_MEM_SIZE=0x00200000
 CONFIG_SRECORDER_VERSION="0.0.0.1"
 =======
 CONFIG_THUNDERPLUG_CONTROL=y
+<<<<<<< HEAD
 >>>>>>> 310535859... update defconfig
+=======
+CONFIG_INTELLI_PLUG=y
+>>>>>>> db501220b... Enable intelliplug hotplugging driver
