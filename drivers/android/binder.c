@@ -4448,7 +4448,7 @@ err_misc_register_failed:
 static int __init binder_init(void)
 {
 	int ret = 0;
-	char *device_name, *device_names;
+	char *device_name, *device_names, *device_tmp;
 	struct binder_device *device;
 	struct hlist_node *tmp;
 
@@ -4462,7 +4462,8 @@ static int __init binder_init(void)
 
 	strcpy(device_names, binder_devices_param);
 
-	while ((device_name = strsep(&device_names, ","))) {
+	device_tmp = device_names;
+	while ((device_name = strsep(&device_tmp, ","))) {
 		ret = init_binder_device(device_name);
 		if (ret)
 			goto err_init_binder_device_failed;
@@ -4509,6 +4510,8 @@ err_init_binder_device_failed:
 		hlist_del(&device->hlist);
 		free_binder_device(device);
 	}
+
+	kfree(device_names);
 
 	return ret;
 }
