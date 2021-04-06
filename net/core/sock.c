@@ -91,6 +91,7 @@
 
 #define pr_fmt(fmt) KBUILD_MODNAME ": " fmt
 
+#include <include/android_aid.h>
 #include <linux/capability.h>
 #include <linux/errno.h>
 #include <linux/types.h>
